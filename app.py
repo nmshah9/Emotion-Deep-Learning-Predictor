@@ -31,6 +31,7 @@ import tensorflow as tf
 
 from utils import clean_text
 from utils_dl import texts_to_padded
+from PIL import Image
 
 st.set_page_config(page_title="Emotion Detector (Deep Learning)", page_icon="🧠", layout="centered")
 
@@ -56,6 +57,16 @@ MODEL_PREFERENCE = [
     ("Simple RNN", "dl_simple_rnn.keras"),
 ]
 
+# ============================================================
+# LOAD BANNER
+# ============================================================
+banner = Image.open("banner.png")
+
+# ============================================================
+# DISPLAY BANNER
+# ============================================================
+
+st.image(banner, use_container_width=True)
 
 @st.cache_resource(show_spinner="Loading trained deep learning model...")
 def load_artifacts():
@@ -191,3 +202,18 @@ if predict_clicked:
 
 st.divider()
 st.caption("Built with TensorFlow/Keras + Streamlit | Dataset: dair-ai Emotion dataset")
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.markdown("---")
+
+st.markdown("""
+<div style='text-align: center;'>
+### 🎭 Emotion Detector - Deep Learning"
+
+Built with ❤️ using Streamlit | Developed by nmshah9
+
+</div>
+""", unsafe_allow_html=True)
