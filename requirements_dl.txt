@@ -4,9 +4,6 @@
 # Install with:
 #   pip install -r requirements_dl.txt
 #
-# NOTE: this file is IN ADDITION to requirements.txt from the classic-ML
-# phase (nltk, scikit-learn, pandas, etc. are still needed — utils.py and
-# the cleaning pipeline are shared between both phases).
 numpy>=1.26,<3.0
 pandas>=2.0,<3.1
 scikit-learn>=1.4,<1.9
@@ -16,14 +13,12 @@ joblib>=1.3,<1.6
 streamlit>=1.30,<1.62
 matplotlib>=3.7,<3.11
 seaborn>=0.12,<0.14
-notebook>=7.0,<8.0
-ipykernel>=6.25,<7.0
-tensorflow-cpu>=2.16,<2.22        # use plain "tensorflow" instead if you have a
-                                    # CUDA-capable GPU and want GPU acceleration
-keras-tuner>=1.4,<1.5
-tensorboard>=2.16,<2.22            # required internally by keras-tuner
+
+# Deep learning frameworks
+tensorflow>=2.16,<2.22       # use "tensorflow" (CPU build works on Streamlit Cloud)
+torch>=2.2,<3.0              # CPU build; GPU builds not supported on Streamlit Cloud
 transformers>=4.40,<6.0
-torch>=2.2,<3.0                    # CPU build is fine; install a CUDA build from
-                                    # https://pytorch.org/get-started/locally/
-                                    # instead if you have a compatible GPU
-matplotlib>=3.7,<3.11
+
+# Hyperparameter tuning
+keras-tuner>=1.4,<1.5
+tensorboard>=2.16,<2.22
