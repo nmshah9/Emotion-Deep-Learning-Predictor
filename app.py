@@ -7,8 +7,8 @@ project.
 Run with:   streamlit run app_dl.py
 
 WHAT THIS FILE DOES:
-Loads the best-performing Keras model trained by train_dl_models.py /
-tune_dl_model.py (by default, the KerasTuner-tuned GRU, since it scored
+Loads the best-performing Keras model trained by train_models.py /
+tune_model.py (by default, the KerasTuner-tuned GRU, since it scored
 highest in testing — falls back to the best untuned model automatically if
 the tuned one isn't present), along with the same tokenizer and label
 encoder used during training. The user types a sentence, we clean it with
@@ -17,7 +17,7 @@ padded token sequence with the SAME fitted tokenizer, and feed it to the
 model to get a predicted emotion + confidence scores for every class.
 
 IMPORTANT: This app does NOT train anything itself. You must run
-`python train_dl_models.py` (and, optionally, `python tune_dl_model.py`
+`python train_models.py` (and, optionally, `python tune_model.py`
 for the best result) at least once before `streamlit run app_dl.py` will
 work — see README_DL.md.
 """
